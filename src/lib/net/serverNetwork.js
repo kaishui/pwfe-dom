@@ -48,7 +48,7 @@ class serverNetwork {
             options = {}
         params.method && (options.method = params.method)
         params.header && (options.headers = params.header)
-        params.data && (options.body = params.data)
+        params.query && (options.body = params.query)
         fetch(params.url, options).then((res)=>{
             exeMapping(_this.callback, 'headers', res.headers.raw())
             return res.json()
